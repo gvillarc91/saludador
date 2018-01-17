@@ -74,7 +74,7 @@ npm start
 
 ## Patterns
 
-The app consist on a big container component (MainCointainer) and three child components:
+The app consists on a big container component (MainCointainer) and three child components:
 
 -VisitorForm: the visitant enter the information (country, name and birthdate) and then submit it.
 -SayHello: This is a stateless componente which aim is to say hello to the visitant, and show his age.
