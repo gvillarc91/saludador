@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FormControl, ControlLabel, Grid, Row, Col, FormGroup, Button } from 'react-bootstrap';
-import Auxiliar from './Auxiliar';
 
 class VisitorForm extends Component {
 
@@ -18,20 +17,15 @@ class VisitorForm extends Component {
 
 
   handlerSubmit(e) {
+    
     e.preventDefault();
-
-    /*let formData = {
-      age: this.inputAge.value = 
-      name: this.inputName.value,
-      selectedCountry: this.inputCountry.value
-    }*/
 
     let formData = {
       age: this.state.age,
       name: this.state.name,
       selectedCountry: this.state.selectedCountry
     }
-    console.log(formData)
+
     this.props.submitHandler(formData);
     
   }
@@ -72,6 +66,7 @@ class VisitorForm extends Component {
                   ref={(ref) => { this.inputCountry = ref }}
                   value={this.state.selectedCountry}
                   onChange={this.linkState('selectedCountry')}
+                  disabled={countries == ''}
                 >
                   <option disabled>Countries</option>
                   {countries}

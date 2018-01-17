@@ -21,6 +21,7 @@ class MainContainer extends Component {
 
         super();
         this.handlerSubmit = this.handlerSubmit.bind(this);
+        this.handlerClick = this.handlerClick.bind(this);
     }
 
     state = {
@@ -49,6 +50,10 @@ class MainContainer extends Component {
         this.setState({ history: historicalUpdated, name: data.name, age: data.age, selectedCountry: data.selectedCountry });
     }
 
+    handlerClick(elem){
+        this.setState({name: elem.name, age:elem.age, selectedCountry: elem.selectedCountry});
+    }
+
     render() {
 
         return (
@@ -75,7 +80,7 @@ class MainContainer extends Component {
                             <Panel>
                                 <Panel.Heading>Historical Visitants</Panel.Heading>
                                 <Panel.Body>
-                                    <HistoricalGreetings historical={this.state.history} />
+                                    <HistoricalGreetings historical={this.state.history} hiAgain={this.handlerClick}/>
                                 </Panel.Body>
                             </Panel>
                         </Col>

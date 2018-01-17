@@ -4,10 +4,11 @@ import React from 'react';
 import Auxiliar from './Auxiliar';
 
 //React-bootstrap
-import { Panel } from 'react-bootstrap';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
-
+const linkStyle ={
+    cursor:'pointer'
+}
 
 const historicalGreetings = (props) => {
     return (
@@ -15,7 +16,7 @@ const historicalGreetings = (props) => {
             {props.historical != null && props.historical.map((elem, index) =>
                 <Row key={index}>
                     <Col xs={12} md={12} lg={12} >
-                        <p>{elem.name + '-' + elem.selectedCountry + '-' + elem.age}</p>
+                        <a style={linkStyle} onClick={()=> props.hiAgain(elem)}>{elem.name + ' - ' + elem.selectedCountry + ' - ' + elem.age}</a>
                     </Col>
                 </Row>)
 
