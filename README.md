@@ -3,6 +3,7 @@
 
 - [Folder Structure](#folder-structure)
 - [Supported Browsers](#supported-browsers)
+- [Deployment](#deployment)
 
 
 ## Folder Structure
@@ -47,7 +48,13 @@ saludador/
 
 The project has been tested on Edge, Chrome and Mozilla.
 
-=======
+## Deployment
+
+You just have to clone the repo and once you have the /saludador folder, get into it with
+and run the command: npm install.
+Later, run npm start. 
+It should automatically open a new window browser in the https://localhost:3000 url.
+
 # saludador
 This app aims to say hi to visitants and then register them.
 
