@@ -6,8 +6,8 @@ import Auxiliar from './Auxiliar';
 //React-bootstrap
 import { Row, Col } from 'react-bootstrap';
 
-const linkStyle ={
-    cursor:'pointer'
+const linkStyle = {
+    cursor: 'pointer'
 }
 
 const historicalGreetings = (props) => {
@@ -16,7 +16,7 @@ const historicalGreetings = (props) => {
             {props.historical != null && props.historical.map((elem, index) =>
                 <Row key={index}>
                     <Col xs={12} md={12} lg={12} >
-                        <a style={linkStyle} onClick={()=> props.hiAgain(elem)}>{elem.name + ' - ' + elem.selectedCountry + ' - ' + elem.age}</a>
+                        <a style={linkStyle} onClick={() => props.hiAgain(elem)}>{elem.name + ' - ' + elem.selectedCountry + ' - ' + elem.age}</a>
                     </Col>
                 </Row>)
 

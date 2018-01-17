@@ -6,7 +6,7 @@ class VisitorForm extends Component {
   constructor(props) {
     super(props);
     this.handlerSubmit = this.handlerSubmit.bind(this);
-    this.initialState = Object.assign({},this.state);
+    this.initialState = Object.assign({}, this.state);
   }
 
   state = {
@@ -17,7 +17,7 @@ class VisitorForm extends Component {
 
 
   handlerSubmit(e) {
-    
+
     e.preventDefault();
 
     let formData = {
@@ -27,7 +27,7 @@ class VisitorForm extends Component {
     }
 
     this.props.submitHandler(formData);
-    
+
   }
 
   //Handles changes of control forms
@@ -42,6 +42,7 @@ class VisitorForm extends Component {
   render() {
 
     let countries = this.props.countries.map(country => <option key={country.alpha2Code} onChange={this.handleControl} >{country.name}</option>);
+
     return (
       <form>
         <Grid>
@@ -51,7 +52,6 @@ class VisitorForm extends Component {
               <FormControl
                 type="text"
                 placeholder="Enter your name"
-                inputRef={(ref) => { this.inputName = ref }}
                 value={this.state.name}
                 onChange={this.linkState('name')}
               />
@@ -63,7 +63,6 @@ class VisitorForm extends Component {
               <FormGroup>
                 <ControlLabel>Country</ControlLabel>
                 <select className="form-control"
-                  ref={(ref) => { this.inputCountry = ref }}
                   value={this.state.selectedCountry}
                   onChange={this.linkState('selectedCountry')}
                   disabled={countries == ''}
@@ -82,7 +81,6 @@ class VisitorForm extends Component {
                 type="date"
                 placeholder="Enter your age"
                 value={this.state.age}
-                inputRef={(ref) => { this.inputAge = ref }}
                 onChange={this.linkState('age')}
               />
             </Col>

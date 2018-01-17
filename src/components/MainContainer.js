@@ -50,8 +50,8 @@ class MainContainer extends Component {
         this.setState({ history: historicalUpdated, name: data.name, age: data.age, selectedCountry: data.selectedCountry });
     }
 
-    handlerClick(elem){
-        this.setState({name: elem.name, age:elem.age, selectedCountry: elem.selectedCountry});
+    handlerClick(elem) {
+        this.setState({ name: elem.name, age: elem.age, selectedCountry: elem.selectedCountry });
     }
 
     render() {
@@ -80,7 +80,7 @@ class MainContainer extends Component {
                             <Panel>
                                 <Panel.Heading>Historical Visitants</Panel.Heading>
                                 <Panel.Body>
-                                    <HistoricalGreetings historical={this.state.history} hiAgain={this.handlerClick}/>
+                                    <HistoricalGreetings historical={this.state.history} hiAgain={this.handlerClick} />
                                 </Panel.Body>
                             </Panel>
                         </Col>
